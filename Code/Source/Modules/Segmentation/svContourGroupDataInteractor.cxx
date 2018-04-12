@@ -83,7 +83,7 @@ bool svContourGroupDataInteractor::ContourExistsOnCurrentSlice( const mitk::Inte
     if(IsOn2DView(interactionEvent))
     {
         const mitk::PlaneGeometry *rendererPlaneGeometry = renderer->GetCurrentWorldPlaneGeometry();
-        m_ContourIndex=group->SearchContourByPlane(rendererPlaneGeometry,1.0,m_TimeStep);
+        m_ContourIndex=group->SearchContourByPlane(rendererPlaneGeometry,0.1,m_TimeStep); // changed from defualt hardcoded 1.0 in second argument
         m_Contour=group->GetContour(m_ContourIndex,m_TimeStep);
 
     }else if(m_Interaction3D){

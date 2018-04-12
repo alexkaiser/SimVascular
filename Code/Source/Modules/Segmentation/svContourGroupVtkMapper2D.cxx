@@ -25,7 +25,7 @@ void svContourGroupVtkMapper2D::FindContourOnCurrentSlice(mitk::BaseRenderer* re
     m_Contour=NULL;
     if(input!=NULL && rendererPlaneGeometry!=NULL)
     {
-        int contourIndex=input->SearchContourByPlane(rendererPlaneGeometry,1.0,t);
+        int contourIndex=input->SearchContourByPlane(rendererPlaneGeometry,0.1,t);  // 1.0 is hardcoded tol in third argument 
         m_Contour=input->GetContour(contourIndex,t);
 
         std::string renderName(renderer->GetName());
