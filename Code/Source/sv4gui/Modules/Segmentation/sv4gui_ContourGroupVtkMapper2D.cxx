@@ -56,7 +56,7 @@ void sv4guiContourGroupVtkMapper2D::FindContourOnCurrentSlice(mitk::BaseRenderer
     m_Contour=NULL;
     if(input!=NULL && rendererPlaneGeometry!=NULL)
     {
-        int contourIndex=input->SearchContourByPlane(rendererPlaneGeometry,1.0,t);
+        int contourIndex=input->SearchContourByPlane(rendererPlaneGeometry,0.1,t); // changed from defualt hardcoded 1.0 in second argument
         m_Contour=input->GetContour(contourIndex,t);
 
         std::string renderName(renderer->GetName());

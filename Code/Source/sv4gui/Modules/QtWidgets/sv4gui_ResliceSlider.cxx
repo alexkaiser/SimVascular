@@ -48,8 +48,8 @@ sv4guiResliceSlider::sv4guiResliceSlider(QWidget *parent)
     , currentDataNode(NULL)
     , resliceSize(5.0)
     , m_UseGeometrySize(true)
-    , m_UseGeometrySpacing(false)
-    , m_UseMinimumSpacing(true)
+    , m_UseGeometrySpacing(true)   // true      // normal is false, true on these  
+    , m_UseMinimumSpacing(false)   // false     // swapping removes reslice, and uses spacing of image 
     , m_ResliceMode(mitk::ExtractSliceFilter::RESLICE_NEAREST)
     , m_StartingSlicePos(0)
 {
